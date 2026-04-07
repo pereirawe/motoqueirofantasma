@@ -1,0 +1,32 @@
+name: 🚀 Deploy via SSH
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy para o servidor
+    runs-on: ubuntu-latest
+
+    # Para pull_request, só executa se o PR foi de fato mergeado
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+
+    steps:
+      - name: 🔐 Conectar via SSH (senha) e fazer git pull
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASS }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script: |
+            cd ${{ secrets.PROJECT_PATH }}
+            git pull origin main
+            echo "✅ Deploy concluído em $(date)"

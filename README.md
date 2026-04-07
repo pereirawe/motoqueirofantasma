@@ -15,31 +15,32 @@ Clique no botão **Fork** no topo direito desta página. Isso criará uma cópia
 
 Substitua SEU\_USUARIO pelo seu nome de usuário do GitHub:
 
-Bash
+```bash
+   git clone https://github.com/SEU_USUARIO/nome-do-repositorio.git  cd nome-do-repositorio   `
+```
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone https://github.com/SEU_USUARIO/nome-do-repositorio.git  cd nome-do-repositorio   `
 
 #### 3\. Crie uma Branch para sua alteração
 
 Nunca trabalhe diretamente na main. Crie uma branch com um nome descritivo:
 
-Bash
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git checkout -b minha-nova-feature   `
+```bash
+   git checkout -b minha-nova-feature
+```
 
 #### 4\. Faça as alterações e o Commit
 
 Após alterar os arquivos, salve-os e execute:
 
-Bash
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git add .  git commit -m "Explique aqui o que você mudou (ex: corrigindo erro no login)"   `
+```bash
+git add .  git commit -m "Explique aqui o que você mudou (ex: corrigindo erro no login)"  
+```
 
 #### 5\. Envie para o GitHub
 
-Bash
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git push origin minha-nova-feature   `
+```bash
+git push origin minha-nova-feature  
+```
 
 #### 6\. Abra um Pull Request
 
