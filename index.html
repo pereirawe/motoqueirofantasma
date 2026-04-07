@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motoqueiro Fantasma</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="bg-black min-h-screen">
+
+  <!-- Efeito de neve -->
+  <div class="neve"></div>
+
+  <!-- Áudio oculto -->
+  <audio id="song" src="assets/song.mp3" loop hidden></audio>
+
+  <!-- Botão flutuante para ativar o som -->
+  <button id="unmute-btn"
+    class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-black font-bold px-5 py-3 rounded-full shadow-lg shadow-orange-500/40 transition-all duration-300 animate-bounce"
+    onclick="ativarSom()">
+    🔇 Ativar som
+  </button>
+
+  <!-- Conteúdo principal -->
+  <main class="relative z-10 flex flex-col items-center pt-10 pb-16 px-4">
+
+    <!-- Container da imagem centralizado -->
+    <div class="w-full max-w-2xl">
+      <img src="assets/image.jpeg" alt="Motoqueiro Fantasma" id="motoqueiro"
+        class="w-full rounded-2xl shadow-2xl shadow-orange-500/30">
+    </div>
+
+  </main>
+
+  <script>
+    function ativarSom() {
+      const song = document.getElementById('song');
+      song.play();
+
+      const btn = document.getElementById('unmute-btn');
+      btn.textContent = '🔊 Som ativado';
+      btn.classList.remove('bg-orange-500', 'hover:bg-orange-400', 'animate-bounce');
+      btn.classList.add('bg-green-600', 'hover:bg-green-500', 'cursor-default');
+      btn.onclick = null;
+
+      // Esconde o botão após 2 segundos
+      setTimeout(() => {
+        btn.style.opacity = '0';
+        btn.style.transform = 'scale(0.8)';
+        btn.style.transition = 'all 0.5s ease';
+        setTimeout(() => btn.remove(), 500);
+      }, 2000);
+    }
+  </script>
+
+</body>
+
+</html>
